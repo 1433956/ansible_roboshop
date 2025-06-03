@@ -69,6 +69,9 @@
   - name: print catalogue ouput
     ansible.builtin.debug:
       msg: "{{ catalogue_ouput }}"
+  - name: load data into mongodb
+    ansible.builtin.shell: mongosh --host mongodb.devops73.site < /app/db/master-data.js
+    when: catalogue_ouput.stdout | int < 0
 
 
   
