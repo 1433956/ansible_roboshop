@@ -38,7 +38,7 @@
   - name: install nodejs dependecies
     community.general.npm:
       path: /app
-  - name: opy catalogue service to system directory
+  - name: copy catalogue service to system directory
     ansible.builtin.copy:
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
@@ -55,7 +55,7 @@
   - name: mongodb setup
     ansible.builtin.copy:
       src: mongo.repo
-      dest: /etc/yum.repos.d/mongo.conf
+      dest: /etc/yum.repos.d/mongo.repo
 
   - name: install mongoDB client
     ansible.builtin.dnf:
